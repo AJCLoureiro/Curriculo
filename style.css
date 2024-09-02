@@ -1,0 +1,251 @@
+@charset "utf-8";
+*{margin: 0; padding: 0}/*inicia todos os elementos*/
+
+body {
+	position: relative;
+	width: 100%;
+	max-width: 100vw;
+	min-height: 100vh;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	font-family: sans-serif;
+	font-size: 18px;
+	background-color: papayawhip;
+	color: rgba(0,0,0,1);
+	border: 2px solid linear-gradient(to right, #ff9966, #ff5e62);
+}
+
+/*secaoTopo*/
+.secaoTopo {
+	scroll-behavior: smooth;
+}
+
+.secaoTopo .topo {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding-right: 5px;
+	width: 100%;
+	height: auto;
+	max-width: 100vw;
+	background-color: #e1c174c4;
+	box-shadow: 0px 0px 0px #320000;
+	display: flex; /* Para alinhar os itens na mesma linha */
+	flex-direction: column;	
+	border-radius: 5px;
+	object-position: left;
+}
+
+.style { /* Estilo para a data/hora no cabeçalho */
+	margin-left: 150px;
+}
+
+.topo, hora-atual {/*bloco inteiro do topo*/
+	font-size: 13px;
+	color: #320000;
+	margin: 0px; /*Adiciona margem superior para posicionar a data/hora no topo e margem inferior para espaçamento */
+	padding-left: 0px;
+	margin-left: 0px;
+	margin-bottom: 0;
+}
+
+.secaoTopo .topo img { /* Estilo para a imagem no topo/cabeçalho*/
+	width: 70px;
+	height: 70px;
+	margin: 8px 0px; /*Adiciona margem superior e inferior para separar a logo */
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: 5px 5px 5px #494c4e;
+	margin-right: 5px;
+	margin-left: 180px;
+}
+
+nav#menu {
+	position: fixed;
+	display: flex; /* Para alinhar os itens na mesma linha */
+	justify-content: flex-end; /* Alinha os itens à direita */
+	margin-right: 140px;
+	right: 0;
+	top: 0;
+	padding-top: 10px;
+}
+
+nav#menu ul {
+	list-style: none; /* Remove os marcadores da lista */
+	padding: 0;
+	margin: 0; /* Remova a margem para evitar espaçamento extra */    
+}
+
+nav#menu li {	
+	display: inline-block;
+	background-color: #e1c174c4;	
+	margin-right: 20px;
+	margin-top: 35px;
+	text-transform: uppercase;
+	transition: background-color 1s;
+	-ms-transition: background-color 1s;	
+	border-radius: 5px;
+	font-weight: bold;
+    align-items: right;    
+    font-size: 16px;
+}
+
+nav#menu li:hover {
+	background-color: #708090;	
+	border-radius: 5px;
+	padding: 2px;		
+}
+
+nav#menu a {		
+	text-decoration: none;
+    color: #320000;
+    padding: 2px;		   
+    transition: box-shadow 0.3s ease; /* Transição suave */
+}
+
+nav#menu a:hover {
+	color: red;		
+	box-shadow: 5px 5px 10px #462e01c4; /* Sombra mais intensa ao passar o mouse */
+	border-radius: 5px;
+}
+
+/*Seção corpo*/
+#secaoInfo {
+	padding: 30px 0;	
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+h1 {
+	font-size: 28px;
+	color: #320000;
+	background-color: #e1c17f4;
+	text-align: center;
+}
+
+h2 {
+	font-size: 95%; 
+	color: #320000; 
+	text-align: center;
+}
+
+h3 {
+	font-size: 85%;
+	color: #320000;
+	text-align: center;
+}
+
+/* Seção cards */
+.card-container {
+	background-attachment: fixed;
+}
+
+.card-container {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	max-width: 100%;
+	max-height: 100%;
+	background-color: papayawhip; /* Mesma cor de fundo para o container dos cards #a9a9a9*/
+	position: relative;
+	padding: 9px 0;
+	margin: 0 auto;
+	background-image: url("../img/programacao.jpg");
+}
+
+.card {
+	width: 300px;
+	height: 600px;
+	background-color: papayawhip;
+	padding: 0;
+	margin-bottom: 5px;
+	margin-right: 80px;
+	cursor: pointer;
+	transition: transform 0.1s ease;
+	perspective: 100%;
+	box-shadow: 6px 6px 6px papayawhip;
+	position: relative;
+	border-radius: 4px;
+}
+
+.card-front card-front-frente{
+	color: #320000;
+	font-style: bold;
+	font-size: 20px;
+}
+
+.card-inner {
+	width: 100%;
+	height: 100%;
+	transition: transform 0.2s ease;
+	transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	
+}
+
+.card-back {
+	transform: rotateY(180deg);
+	border-radius: 4px;
+	background-color: #dfc3af;
+}
+
+.card.virado .card-inner {
+	transform: rotateY(180deg);	
+}
+
+.card-front-frente {
+	background-color: #ede0cc;
+	border-radius: 6px;
+}
+
+.card h2 {
+	padding-top: 3px;
+	margin: 0;
+	text-align: center;
+	font-size: 16px;
+	color: #32000;
+}
+
+.card p {
+	margin: 10px;
+	font-size: 15px;
+	color: #320000;
+}
+
+/* Seção rodapé */
+.footer {
+	margin: 0;
+	padding: 25px 0;
+	font-family: lato;
+	font-size: 16px;
+	text-align: center;
+	line-height: 20px;
+	color: #fff;	
+	background-image: url("../img/cafeteria.jpg");
+	color: #fff;
+}
+
+.footer img {
+    align-items: right;
+    right: 30px;
+    bottom: 50px;
+    display: inline;
+    border: 4px groove #e1c174;
+    box-shadow: inset 0 0 9px 2px #e1c174;
+    transition: box-shadow 0.3s ease; /* Transição suave */
+    width: 30px;
+    height: 30px;
+    position: fixed;
+	border: 2px solid linear-gradient(to right, #e72100, #f36161, #eec647, #dfe404, #35e854, #32dfe9, #4a3df1, #e549f5, #ae07bf);
+}
+
+.footer a img:hover {
+	box-shadow: 5px 5px 10px #462e01c6; /* Sombra mais intensa ao passar o mouse */
+}
